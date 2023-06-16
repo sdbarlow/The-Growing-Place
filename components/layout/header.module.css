@@ -1,0 +1,8 @@
+.header{
+    color:white;
+    cursor: pointer;
+}
+
+.header:hover{
+    color: black;
+}
