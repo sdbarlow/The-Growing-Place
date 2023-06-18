@@ -7,6 +7,34 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        dropdown: {
+            '0%':{height:0},
+            '20%':{height:20},
+            '40%':{height:40},
+            '60%':{height:60},
+            '80%':{height:80},
+            '100%':{ height: 100}
+        },
+        reveal: {
+          '0%':{opacity:0},
+          '50%':{opacity:0},
+          '100%':{opacity:1},
+        },
+        dropback: {
+            '0%':{height:100},
+            '20%':{height:80},
+            '40%':{height:60},
+            '60%':{height:40},
+            '80%':{height:20},
+            '100%':{ height: 0}
+        }
+      },
+      animation: {
+        dropdown: 'dropdown 0.2s linear',
+        dropback: 'dropback 0.5s ease-out',
+        reveal: 'reveal 0.6s linear'
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
