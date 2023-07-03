@@ -71,10 +71,7 @@ function Header() {
             <h1 className='text-white hover:cursor-pointer'>EMPLOYMENT</h1>
             <div className={dropdowns[3].isHovered ? 'animate-dropdown flex w-1/12 justify-left h-fit absolute bg-white' : 'absolute'}>
                 <ul className={dropdowns[3].isHovered ? 'animate-reveal' : 'opacity-0'}>
-                  <li className='hover:text-blue-500 hover:cursor-pointer'>Hello</li>
-                  <li className='hover:text-blue-500 hover:cursor-pointer'>My </li>
-                  <li className='hover:text-blue-500 hover:cursor-pointer'>List</li>
-                  <li className='hover:text-blue-500 hover:cursor-pointer'>Is</li>
+                  <Link href='/application'><li className='hover:text-blue-500 hover:cursor-pointer'>Application</li></Link>
                 </ul>
               </div>
             </div>

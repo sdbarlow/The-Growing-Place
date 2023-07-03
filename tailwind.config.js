@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -7,6 +8,14 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        custom: 'rgb(106,188,239)',
+        pengblue: 'rgb(0,129,206)'
+      },
+      fontFamily: {
+        'sniglet': ['Sniglet', 'sans-serif'],
+        'concert': ['Concert One', 'sans-serif'],
+      },
       keyframes: {
         dropdown: {
             '0%':{height:0},
@@ -20,6 +29,9 @@ module.exports = {
           '0%':{opacity:0},
           '50%':{opacity:0},
           '100%':{opacity:1},
+        },
+        rotate: {
+          '170': '170deg',
         },
         dropback: {
             '0%':{height:100},
