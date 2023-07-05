@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import FullGrowingPlace from '../public/images/Full Growing Place.png'
 import { useFormik } from 'formik'
@@ -6,6 +6,8 @@ import { basicSchema } from '@/components/schemas'
 import { PiArrowFatRightFill } from 'react-icons/Pi'
 
 function Application() {
+
+    const [page, setFirst] = useState('second')
 
     const onSubmit = (values, actions) => {
         console.log(errors)
@@ -40,11 +42,11 @@ function Application() {
 
     const hasErrors = Object.values(errors).some((error) => error);
 
-    console.log(hasErrors);
+
   return (
     <div className='bg-blue-500 h-fit flex justify-center items-center pt-56'>
-        <div className={hasErrors ? 'bg-white h-[1150px] w-3/4 rounded-3xl mb-20 relative shadow-[inset_0_-1px_0px_12px_rgb(106,188,239)]' : 'bg-white h-[1000px] w-3/4 rounded-3xl mb-20 relative shadow-[inset_0_-1px_0px_12px_rgb(106,188,239)]'}>
-            <div className='bg-blue-500 border-b-8 border-r-8 border-custom rounded-br-3xl h-1/5 w-1/4 absolute top-0 left-0'>
+        <div className={hasErrors ? 'bg-white h-[1150px] w-3/4 rounded-3xl mb-20 relative shadow-[inset_0_-1px_0px_12px_rgb(106,188,239)]' : 'bg-white h-[1000px] w-3/4 rounded-3xl mb-20 relative shadow-[inset_0_-1px_0px_12px_rgb(106,188,239)]'}>     
+        <div className='bg-blue-500 border-b-8 border-r-8 border-custom rounded-br-3xl h-1/5 w-1/4 absolute top-0 left-0'>
                 <div className='w-full h-full bg-gradient-radial from-white via-blue-500 via-70% flex items-center pt-16 justify-center'>
                     <Image src={FullGrowingPlace} height={900} width={360} className='select-none'></Image>
                 </div>
@@ -57,7 +59,7 @@ function Application() {
                 <h1 className='text-pengblue text-6xl font-sniglet z-10 select-none'>Employment Application</h1>
             </div>
             <div className={hasErrors ? "w-[90%] m-auto mb-8 mt-28 h-[500px] bg-white relative z-10" : "w-[90%] m-auto mb-8 mt-24 h-[500px] bg-white relative z-10"}>
-                    <form onSubmit={handleSubmit} autoComplete='off'>
+            {page == 'first' ? <form onSubmit={handleSubmit} autoComplete='off'>
                         <div className='w-20 h-28 inline-flex'>
                             <div className='rounded-full h-[50%] w-[70%] flex items-center border-2 border-gray-500 justify-center bg-pengblue z-10'>
                                 <h1 className='text-3xl text-white font-concert select-none'>1.</h1>
@@ -170,8 +172,8 @@ function Application() {
                                 <button type="submit" className='font-concert text-4xl rounded-xl text-white bg-gradient-to-t from-blue-500 to-custom border-b-gray-900 border-b-4 p-2 hover:border-0 hover:bg-gradient-to-t hover:from-pengblue hover:to-pengblue'>Next<PiArrowFatRightFill className='inline text-white'></PiArrowFatRightFill></button>
                             </div>
                         </div>
-                    </form>
-            </div>
+                    </form>: <h1>hello</h1>}
+            </div> 
         </div>
     </div>
   )
