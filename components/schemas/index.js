@@ -22,20 +22,18 @@ export const firstPageSchema = yup.object().shape({
 })
 
 export const secondPageSchema = yup.object().shape({
-    highSchool: yup.string().required("Highschool Education Required"),
-    hsAddress: yup.string().required("Highschool Education Required"),
+    highSchool: yup.string().required("Highschool Education Required").max(35, 'maximum characters thirty five'),
+    hsAddress: yup.string().required("Highschool Education Required").max(40, 'maximum characters forty'),
     hsFrom: yup.string().required("Highschool Education Required"),
     hsTo: yup.string().required("Highschool Education Required"),
-    hsGraduate: yup.string().required("Highschool Education Required"),
-    diploma: yup.string().required("Highschool Education Required"),
+    hsGraduate: yup.string().required('Please select an option'),
+    diploma: yup.string().required("Highschool Education Required").max(40, 'maximum characters forty'),
     college: yup.string().max(35, 'maximum characters thirty five'),
     coAddress: yup.string().max(40, 'maximum characters forty'),
     coGraduate: yup.string(),
-    coDegree: yup.string(),
+    coDegree: yup.string().max(40, 'maximum characters forty'),
     other: yup.string().max(35, 'maximum characters thirty five'),
     oAddress: yup.string().max(40, 'maximum characters forty'),
-    oFrom: yup.string(),
-    oTo: yup.string(),
     oGraduate: yup.string(),
-    oDegree: yup.string()
+    oDegree: yup.string().max(40, 'maximum characters forty')
 })

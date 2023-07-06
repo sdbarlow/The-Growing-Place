@@ -19,7 +19,7 @@ function Second() {
           hsAddress: "",
           hsFrom: "",
           hsTo: "",
-          hsGraduate: "",
+          hsGraduate: false,
           diploma: "",
           college: "",
           coAddress: "",
@@ -37,6 +37,12 @@ function Second() {
       validationSchema: secondPageSchema,
       onSubmit,
     })
+
+    const handleCheckboxChange = (value) => {
+        formik.setFieldValue('hsGraduate', value);
+      };
+
+
   return (
     <form onSubmit={handleSubmit} autoComplete='off'>
             <div className='w-20 h-28 inline-flex'>
@@ -59,10 +65,10 @@ function Second() {
                             <label className='text-black font-semibold select-none' htmlFor='to'>To:</label>
                             <input type='date' className={errors.hsTo && touched.hsTo ? 'border-red-600 border-2 p-2 h-1/2 w-full rounded-lg grid-col-1 row-span-1' : 'border-2 border-gray-400 p-2 h-1/2 w-full rounded-lg grid-col-1 row-span-1'} value={values.hsTo} onChange={handleChange} onBlur={handleBlur} id='hsTo'></input>
                             <h1 className='text-black font-semibold select-none' htmlFor='graduate'>Did you graduate?</h1>
-                            <label className='text-black font-semibold select-none' htmlFor='yes'>YES</label>
-                            <input type='checkbox' className='border-2 border-gray-400 p-2 h-1/2 w-full rounded-lg grid-col-1 row-span-1' id='yes'></input>
+                            <label className={errors.hsGraduate && touched.hsGraduate ? 'text-red-500 font-semibold select-none': 'text-black font-semibold select-none'} htmlFor='hsGraduate'>YES</label>
+                            <input type='checkbox' className='border-2 accent-blue-400 p-2 h-1/2 w-full' checked={values.hsGraduate === 'YES'} onChange={() => handleCheckboxChange('YES')} id='hsGraduate'></input>
                             <label className='text-black font-semibold select-none' htmlFor='no'>NO</label>
-                            <input type='checkbox' className='border-2 border-gray-400 p-2 h-1/2 w-full rounded-lg grid-col-1 row-span-1' id='no'></input>
+                            <input type='checkbox' className='border-2 border-gray-400 p-2 h-1/2 w-full rounded-lg grid-col-1 row-span-1' checked={values.hsGraduate === 'NO'} onChange={() => handleCheckboxChange('NO')} id='no'></input>
                             <label className='text-black font-semibold select-none' htmlFor='diploma'>Diploma:</label>
                             <input type='text' className={errors.diploma && touched.diploma ? 'border-red-600 border-2 p-2 h-1/2 w-full rounded-lg grid-col-1 row-span-1' : 'border-2 border-gray-400 p-2 h-1/2 w-full rounded-lg grid-col-1 row-span-1'} value={values.diploma} onChange={handleChange} onBlur={handleBlur} id='diploma'></input>            
                         </div>
