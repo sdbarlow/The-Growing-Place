@@ -49,7 +49,7 @@ function Third() {
                         <h1 className='text-gray-500 mt-4 mb-4 text-3xl select-none inline'>Previous Employment</h1>
                         <div className='grid grid-cols-3 grid-rows-7 gap-8'>
                             <div className='flex justify-end'>
-                                <button type="submit" className='font-concert text-4xl rounded-xl text-white bg-gradient-to-t from-blue-500 to-custom border-b-gray-900 border-b-4 p-2 hover:border-0 hover:bg-gradient-to-t hover:from-pengblue hover:to-pengblue'>Next<PiArrowFatRightFill className='inline text-white'></PiArrowFatRightFill></button>
+                                <button type="submit" className='font-concert text-4xl rounded-xl text-white bg-gradient-to-t from-blue-500 to-custom border-b-gray-900 border-b-4 p-2 hover:border-0 hover:bg-gradient-to-t hover:from-pengblue hover:to-pengblue'>Submit!</button>
                             </div>
                         </div>
                   </form>

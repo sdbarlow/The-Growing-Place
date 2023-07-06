@@ -20,7 +20,81 @@ function Application() {
 
 
   return (
-    <div className='bg-blue-500 h-fit flex justify-center items-center pt-56'>
+    <div className='bg-blue-500 h-fit flex flex-col justify-center items-center pt-40'>
+        <div className="w-1/2 mx-auto my-0 pb-8">	
+            <div className="flex pb-3">
+                <div className="flex-1">
+                </div>
+
+                <div className="flex-1">
+                    <div className="w-10 h-10 bg-white mx-auto rounded-full text-lg text-white flex items-center">
+                        <span className="text-blue-400 text-center w-full">1<i class="fa fa-check w-full fill-current white"></i></span>
+                    </div>
+                </div>
+
+
+                <div className="w-1/3 px-4 align-center items-center align-middle content-center flex">
+                    <div className="w-full bg-white rounded items-center align-middle align-center flex-1">
+                        <div className="bg-white text-xs leading-none py-1 text-center rounded text-blue-400" style={{width: '100%'}}></div>
+                    </div>
+                </div>
+            
+                
+                <div className="flex-1">
+                    <div className="w-10 h-10 bg-white mx-auto rounded-full text-lg text-white flex items-center">
+                        <span className="text-blue-400 text-center w-full">2<i class="fa fa-check w-full fill-current white"></i></span>
+                    </div>
+                </div>
+            
+                <div className="w-1/3 px-4 align-center items-center align-middle content-center flex">
+                    <div className="w-full bg-white rounded items-center align-middle align-center flex-1">
+                        <div className="bg-green-light text-xs leading-none py-1 text-center text-grey-darkest rounded " style={{width: '20%'}}></div>
+                    </div>
+                </div>
+            
+                <div className="flex-1">
+                    <div className="w-10 h-10 bg-white border-2 border-grey-light mx-auto rounded-full text-lg text-white flex items-center">
+                        <span className="text-blue-400 text-center w-full">3</span>
+                    </div>
+                </div>
+            
+            
+                <div className="w-1/3 px-4 align-center items-center align-middle content-center flex">
+                    <div className="w-full bg-white rounded items-center align-middle align-center flex-1">
+                        <div className="bg-blue-400 text-xs leading-none py-1 text-center text-grey-darkest rounded " style={{width: '0%'}}></div>
+                    </div>
+                </div>
+
+
+                <div className="flex-1">
+                    <div className="w-10 h-10 bg-white border-2 border-grey-light mx-auto rounded-full text-lg text-white flex items-center">
+                        <span className="text-blue-400 text-center w-full">4</span>
+                    </div>
+                </div>
+            
+            
+                <div className="flex-1">
+                </div>		
+            </div>
+            
+            <div className="flex text-xs content-center text-center">
+                <div className="w-1/4">
+                    Applicant Information
+                </div>
+                
+                <div className="w-1/4">
+                    Education
+                </div>
+                
+                <div className="w-1/4">
+                    Previous Employment
+                </div>
+                
+                <div className="w-1/4">
+                    Confirmation
+                </div>			
+            </div>
+        </div>
         <div className={hasErrors ? 'bg-white h-[1150px] w-3/4 rounded-3xl mb-20 relative shadow-[inset_0_-1px_0px_12px_rgb(106,188,239)]' : 'bg-white h-[1000px] w-3/4 rounded-3xl mb-20 relative shadow-[inset_0_-1px_0px_12px_rgb(106,188,239)]'}>     
         <div className='bg-blue-500 border-b-8 border-r-8 border-custom rounded-br-3xl h-1/5 w-1/4 absolute top-0 left-0'>
                 <div className='w-full h-full bg-gradient-radial from-white via-blue-500 via-70% flex items-center pt-16 justify-center'>
