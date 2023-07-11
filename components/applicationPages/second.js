@@ -34,7 +34,7 @@ function Second() {
           oGraduate: "",
           oDegree: ""
       },
-      validationSchema: secondPageSchema,
+    //   validationSchema: secondPageSchema,
       onSubmit,
     })
 

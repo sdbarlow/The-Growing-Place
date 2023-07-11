@@ -8,6 +8,7 @@ import Second from '@/components/applicationPages/second'
 import Third from '@/components/applicationPages/third'
 import Fourth from '@/components/applicationPages/fourth'
 import ApplicationPageContext from '@/store/application-context'
+import { FaCheck } from 'react-icons/fa'
 
 function Application() {
 
@@ -20,54 +21,54 @@ function Application() {
 
 
   return (
-    <div className='bg-blue-500 h-fit flex flex-col justify-center items-center pt-40'>
-        <div className="w-1/2 mx-auto my-0 pb-8">	
+    <div className='bg-blue-500 h-fit flex flex-col justify-center items-center pt-44'>
+        <div className="w-1/2 mx-auto my-0 pb-16">	
             <div className="flex pb-3">
                 <div className="flex-1">
                 </div>
 
                 <div className="flex-1">
-                    <div className="w-10 h-10 bg-white mx-auto rounded-full text-lg text-white flex items-center">
-                        <span className="text-blue-400 text-center w-full">1<i class="fa fa-check w-full fill-current white"></i></span>
+                    <div className={currentPage != 'first' ? "w-10 h-10 bg-blue-400 border-2 border-green-400 mx-auto rounded-full text-lg text-white flex items-center" : "w-10 h-10 bg-white border-4 border-green-400 mx-auto rounded-full text-lg text-white flex items-center"}>
+                        <span className="text-blue-400 text-right w-full">{currentPage != 'first' ? <FaCheck className='text-green-400 text-3xl pl-1'/> : <p className='text-center text-xl'>1</p>}</span>
                     </div>
                 </div>
 
 
                 <div className="w-1/3 px-4 align-center items-center align-middle content-center flex">
-                    <div className="w-full bg-white rounded items-center align-middle align-center flex-1">
-                        <div className="bg-white text-xs leading-none py-1 text-center rounded text-blue-400" style={{width: '100%'}}></div>
+                    <div className={currentPage != 'first' ? "w-full bg-green-400 rounded items-center align-middle align-center flex-1" : "w-full bg-white rounded items-center align-middle align-center flex-1"}>
+                        <div className="bg-green-400 text-xs leading-none py-1 text-center rounded text-blue-400" style={{width: '50%'}}></div>
                     </div>
                 </div>
             
                 
                 <div className="flex-1">
-                    <div className="w-10 h-10 bg-white mx-auto rounded-full text-lg text-white flex items-center">
-                        <span className="text-blue-400 text-center w-full">2<i class="fa fa-check w-full fill-current white"></i></span>
+                    <div className={currentPage === 'second' ? 'w-10 h-10 bg-white mx-auto border-4 border-green-400 rounded-full text-lg text-white flex items-center' : currentPage === 'third' || currentPage === 'fourth' ? 'w-10 h-10 bg-blue-400 mx-auto border-2 border-green-400 rounded-full text-lg text-white flex items-center' : 'w-10 h-10 bg-white mx-auto border-2 rounded-full text-lg text-white flex items-center'}>
+                        <span className="text-blue-400 text-center w-full">{currentPage === 'third' || currentPage === 'fourth' ? <FaCheck className='text-green-400 text-3xl pl-1'/> : <p className='text-center text-xl'>2</p>}</span>
                     </div>
                 </div>
             
                 <div className="w-1/3 px-4 align-center items-center align-middle content-center flex">
-                    <div className="w-full bg-white rounded items-center align-middle align-center flex-1">
-                        <div className="bg-green-light text-xs leading-none py-1 text-center text-grey-darkest rounded " style={{width: '20%'}}></div>
+                    <div className={currentPage === 'third' || currentPage === 'fourth' ? "w-full bg-green-400 rounded items-center align-middle align-center flex-1" : "w-full bg-white rounded items-center align-middle align-center flex-1"}>
+                        <div className={currentPage === 'first' ? "bg-white text-xs leading-none py-1 text-center text-grey-darkest rounded " : "bg-green-400 text-xs leading-none py-1 text-center text-grey-darkest rounded "} style={{width: '50%'}}></div>
                     </div>
                 </div>
             
                 <div className="flex-1">
-                    <div className="w-10 h-10 bg-white border-2 border-grey-light mx-auto rounded-full text-lg text-white flex items-center">
-                        <span className="text-blue-400 text-center w-full">3</span>
+                    <div className={currentPage === 'third' ? "w-10 h-10 bg-white border-4 border-green-400 border-grey-light mx-auto rounded-full text-lg text-white flex items-center" : currentPage === 'first' || currentPage === 'second' ? "w-10 h-10 bg-white border-2 border-grey-light mx-auto rounded-full text-lg text-white flex items-center" : "w-10 h-10 bg-blue-400 border-2 border-green-400 border-grey-light mx-auto rounded-full text-lg text-white flex items-center"}>
+                        <span className="text-blue-400 text-center w-full">{currentPage === 'fourth' ? <FaCheck className='text-green-400 text-3xl pl-1'/> : <p className='text-center text-xl'>3</p>}</span>
                     </div>
                 </div>
             
             
                 <div className="w-1/3 px-4 align-center items-center align-middle content-center flex">
-                    <div className="w-full bg-white rounded items-center align-middle align-center flex-1">
-                        <div className="bg-blue-400 text-xs leading-none py-1 text-center text-grey-darkest rounded " style={{width: '0%'}}></div>
+                    <div className={currentPage === 'fourth' ? "w-full bg-green-400 rounded items-center align-middle align-center flex-1" : "w-full bg-white rounded items-center align-middle align-center flex-1"}>
+                        <div className={currentPage === 'third' || currentPage === 'fourth' ? "bg-green-400 text-xs leading-none py-1 text-center text-grey-darkest rounded " : "bg-white text-xs leading-none py-1 text-center text-grey-darkest rounded "} style={{width: '50%'}}></div>
                     </div>
                 </div>
 
 
                 <div className="flex-1">
-                    <div className="w-10 h-10 bg-white border-2 border-grey-light mx-auto rounded-full text-lg text-white flex items-center">
+                    <div className={currentPage === 'fourth' ? "w-10 h-10 bg-white border-4 border-green-400 border-grey-light mx-auto rounded-full text-lg text-white flex items-center" : "w-10 h-10 bg-white border-2 border-grey-light mx-auto rounded-full text-lg text-white flex items-center"}>
                         <span className="text-blue-400 text-center w-full">4</span>
                     </div>
                 </div>
@@ -77,20 +78,20 @@ function Application() {
                 </div>		
             </div>
             
-            <div className="flex text-xs content-center text-center">
-                <div className="w-1/4">
+            <div className="flex text-xs w-full justify-between">
+                <div>
                     Applicant Information
                 </div>
                 
-                <div className="w-1/4">
+                <div className='mr-10'>
                     Education
                 </div>
                 
-                <div className="w-1/4">
+                <div>
                     Previous Employment
                 </div>
                 
-                <div className="w-1/4">
+                <div>
                     Confirmation
                 </div>			
             </div>
